@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <PreferenceCategory
+        android:title="Server">
+
+        <EditTextPreference
+            android:key="preference_server_hostname"
+            android:defaultValue="0.0.0.0"
+            android:title="Hostname"
+            android:summary="The server hostname or ip address"
+            android:inputType="textUri" />
+
+        <EditTextPreference
+            android:key="preference_server_port"
+            android:defaultValue="80"
+            android:title="Port"
+            android:summary="The server port to use"
+            android:inputType="number" />
+
+        <EditTextPreference
+            android:key="preference_server_api_location"
+            android:defaultValue="wifi/"
+            android:title="API Path"
+            android:summary="The server API path"
+            android:inputType="textUri" />
+
+        <SwitchPreference
+            android:key="preference_generate_dummy_traffic"
+            android:defaultValue="false"
+            android:title="Traffic generation"
+            android:summary="Improve localization by generating network traffic"/>
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen> 

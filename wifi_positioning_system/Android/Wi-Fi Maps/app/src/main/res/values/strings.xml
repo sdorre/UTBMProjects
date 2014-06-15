@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WiFi Maps</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="no_maps_display">No map to display</string>
+    <string name="get_maps">Get maps</string>
+    <string name="unable_get_maps">Unable to download the map list</string>
+    <string name="unable_get_map">Unable to download the map</string>
+    <string name="loading_maps">Loading maps</string>
+
+    <string name="calibration_reset">Reset calibration</string>
+    <string name="unable_calibration_reset">Unable to reset the calibration point\'s list</string>
+    <string name="loading_calibration_reset">In progress...</string>
+
+    <string name="unable_send_calibration">Unable to send the calibration point</string>
+
+    <string name="title_activity_settings">Settings</string>
+</resources>

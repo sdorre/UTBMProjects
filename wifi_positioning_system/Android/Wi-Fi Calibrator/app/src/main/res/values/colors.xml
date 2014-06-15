@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffffff</color>
+    <color name="white_slightly_transparent">#ccffffff</color>
+    <color name="black_semi_transparent">#aa000000</color>
+    <color name="black_slightly_transparent">#cc000000</color>
+    <color name="shadow_background_start">#33333333</color>
+    <color name="shadow_background_end">#00333333</color>
+
+    <color name="dark_blue">#ff2295b5</color>
+
+    <color name="black_background">#ff1a1a1a</color>
+</resources>

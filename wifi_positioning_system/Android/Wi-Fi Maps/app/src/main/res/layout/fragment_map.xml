@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.myapplication2.app.MapFragment">
+
+    <com.example.myapplication2.app.MapView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map_view"
+        android:layout_gravity="center"
+        android:background="@color/white" />
+
+    <com.example.myapplication2.app.MapOverlay
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map_overlay"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/map_cursor"
+        android:src="@drawable/pin"
+        android:visibility="invisible"
+        android:layout_gravity="left|top" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/user_location_dot"
+        android:src="@drawable/gray_dot"
+        android:visibility="invisible"
+        android:layout_gravity="left|top" />
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" >
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp">
+
+            <FrameLayout
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_gravity="left|bottom">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/navigation_drawer_button"
+                    android:src="@drawable/button_navigationdrawer_selector"
+                    android:clickable="true" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:orientation="horizontal"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:background="@drawable/button_selector"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_gravity="right|bottom"
+                android:clickable="false"
+                android:layout_marginRight="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/center_button"
+                    android:src="@drawable/button_center_selector"
+                    android:layout_gravity="center"
+                    android:clickable="true" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/footer_shadow"
+            android:layout_width="fill_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/footer_above_shadow"
+            android:visibility="invisible" />
+
+        <FrameLayout
+            android:id="@+id/footer_container"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/footer_container_height"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/footer_background">
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

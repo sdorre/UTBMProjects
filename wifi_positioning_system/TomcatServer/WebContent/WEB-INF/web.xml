@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>wifi</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>Calibration</servlet-name>
+    <servlet-class>com.servlets.Calibration</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>Location</servlet-name>
+    <servlet-class>com.servlets.Location</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>Maps</servlet-name>
+    <servlet-class>com.servlets.Maps</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>AccessPoint</servlet-name>
+    <servlet-class>com.servlets.AccessPoint</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ListOfCalibration</servlet-name>
+    <servlet-class>com.servlets.ListOfCalibration</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>DeleteCalibration</servlet-name>
+    <servlet-class>com.servlets.DeleteCalibration</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>Test</servlet-name>
+    <servlet-class>com.servlets.Test</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>Upload</servlet-name>
+    <servlet-class>com.servlets.Upload</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Calibration</servlet-name>
+    <url-pattern>/calibration</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Location</servlet-name>
+    <url-pattern>/location</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Maps</servlet-name>
+    <url-pattern>/maps</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>AccessPoint</servlet-name>
+    <url-pattern>/APconfig</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ListOfCalibration</servlet-name>
+    <url-pattern>/calibrationpoints</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>DeleteCalibration</servlet-name>
+    <url-pattern>/deletecalibration</url-pattern>
+  </servlet-mapping>
+    
+  <servlet-mapping>
+    <servlet-name>Test</servlet-name>
+    <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Upload</servlet-name>
+    <url-pattern>/upload</url-pattern>
+  </servlet-mapping>
+</web-app>
