@@ -1,0 +1,58 @@
+# mpirun -np 4 ramanujan 15 > ramanujan0.log
+
+
+send first work number:0 to process 1
+send first work number:1 to process 2
+send first work number:2 to process 3
+Child 1: receive value:0
+Child 2: receive value:1
+Child 2: send my computation 0.000027
+Master: received result_n = 0.000027 and send value : 3 to child 2
+Child 2: receive value:3
+Child 2: send my computation 0.000000
+Master: received result_n = 0.000000 and send value : 4 to child 2
+Child 2: receive value:4
+Child 2: send my computation 0.000000
+Master: received result_n = 0.000000 and send value : 5 to child 2
+Child 2: receive value:5
+Child 2: send my computation -0.000000
+Master: received result_n = -0.000000 and send value : 6 to child 2
+Child 2: receive value:6
+Child 2: send my computation -0.000000
+Master: received result_n = -0.000000 and send value : 7 to child 2
+Child 2: receive value:7
+Child 2: send my computation -0.000000
+Master: received result_n = -0.000000 and send value : 8 to child 2
+Master: received result_n = 1103.000000 and send value : 9 to child 1
+Child 2: receive value:8
+Child 2: send my computation -0.000000
+Master: received result_n = -0.000000 and send value : 10 to child 2
+Child 2: receive value:10
+Child 2: send my computation 0.000000
+Master: received result_n = 0.000000 and send value : 11 to child 2
+Child 2: receive value:11
+Child 2: send my computation 0.000000
+Master: received result_n = 0.000000 and send value : 12 to child 2
+Child 2: receive value:12
+Child 2: send my computation 0.000000
+Child 1: send my computation 1103.000000
+Master: received result_n = 0.000000 and send value : 13 to child 2
+Child 2: receive value:13
+Child 2: send my computation 0.000000
+Master: received result_n = 0.000000 and send value : 14 to child 2
+
+Queue empty
+end while - count = 1103.000027
+Child 2: receive value:14
+Child 2: send my computation 0.000000
+Child 1: receive value:9
+Child 1: send my computation 0.000000
+Child 3: receive value:2
+Master: I send something
+Master: I send something
+Master: I send something
+Child 3: send my computation 0.000000
+pi = 3.141593
+ process 1 : I stop
+ process 2 : I stop
+ process 3 : I stop

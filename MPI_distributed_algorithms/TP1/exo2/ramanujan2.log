@@ -1,0 +1,23 @@
+# mpirun -np 3 ramanujan 4 > ramanujan2.log
+
+
+send first work number:0 to process 1
+send first work number:1 to process 2
+Child 1: receive value:0
+Master: received result_n = 1103.000000 and send value : 2 to child 1
+Child 1: send my computation 1103.000000
+Child 2: receive value:1
+Master: received result_n = 0.000027 and send value : 3 to child 2
+
+Child 2: send my computation 0.000027
+Queue empty
+end while - count = 1103.000027
+Child 1: receive value:2
+Child 1: send my computation 0.000000
+Child 2: receive value:3
+Master: I send something
+Child 2: send my computation 0.000000
+ process 1 : I stop
+Master: I send something
+pi = 3.141593
+ process 2 : I stop

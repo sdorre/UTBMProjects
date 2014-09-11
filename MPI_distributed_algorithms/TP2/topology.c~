@@ -1,0 +1,61 @@
+#include "mpi.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+int _rank, _numprocs, _ret;
+
+//Communicator used to communicate in the virtual topology we'll create
+MPI_Comm graph_comm;
+
+MPI_Status status;
+
+/* number of nodes */
+int graph_node_count = 6;
+
+/* index definition */
+int graph_index[6] = {2, 5, 9, 12, 15, 16};
+
+/* edges definition */
+int graph_edges[16] = {1, 2, 0, 2, 4, 0, 1, 4, 3, 2, 4, 5, 1, 2, 3, 3};
+
+int graph_reorder = 1; /* allows processes reordered for efficiency */
+
+
+int create_graph() {
+
+    if (_numprocs < graph_node_count)
+        return 1;
+
+    MPI_Graph_create(MPI_COMM_WORLD, graph_node_count, graph_index, graph_edges, graph_reorder, &graph_comm); 
+
+    return 0;
+}
+
+int main(int argc, char *argv[]){
+	
+	MPI_Init(&argc, &argv);
+    MPI_Comm_size(MPI_COMM_WORLD, &_numprocs);
+    MPI_Comm_rank(MPI_COMM_WORLD, &_rank);
+
+	//create the graph
+    if(create_graph() != 0) {
+        printf("This program needs 6 nodes.\n");
+        return 1;
+    }
+
+    	//i iterator, number of neighbors & tabs of my neighbors
+	int rank, neighbor_count, *neighbors;
+    
+    MPI_Comm_rank(graph_comm, &rank);       
+    
+    MPI_Graph_neighbors_count(graph_comm, rank, &neighbor_count);
+    
+    neighbors = malloc (neighbor_count * sizeof(int));
+    MPI_Graph_neighbors(graph_comm, rank, neighbor_count, neighbors);
+	
+
+	MPI_Finalize();
+
+
+}
+		

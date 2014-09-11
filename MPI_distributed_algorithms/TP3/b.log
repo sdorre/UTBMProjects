@@ -1,0 +1,46 @@
+[1401653765.900797] master - send Ping
+[1401653765.901151] node 1 : receive ping from node 0
+[1401653765.901580] master - send Pong
+[1401653765.901710] node 2 : receive ping from node 1
+[1401653765.902113] node 3 : receive ping from node 2
+[1401653765.902496] node 4 : receive ping from node 3
+[1401653765.903256] node 5 : receive ping from node 4
+[1401653765.903665] node 6 : receive ping from node 5
+[1401653765.903909] node 7 : receive ping from node 6
+[1401653765.904165] node 8 : receive ping from node 7
+[1401653765.904409] node 9 : receive ping from node 8
+[1401653765.904733] node 0 : receive ping from node 9
+[1401653766.901709] node 1 : receive pong from node 0
+[1401653766.902202] node 2 : receive pong from node 1
+[1401653766.902529] node 3 : receive pong from node 2
+[1401653766.903273] node 4 : receive pong from node 3
+[1401653767.901865] node 1 : receive ping from node 0
+[1401653767.902345] node 2 : receive ping from node 1
+[1401653767.902655] node 3 : receive ping from node 2
+[1401653767.902734] node 4 : receive ping from node 3
+[1401653767.902821] PONG lost ! - regenerate it !
+[1401653767.903085] node 5 : receive pong from node 4
+[1401653767.903360] node 6 : receive pong from node 5
+[1401653767.903451] node 7 : receive pong from node 6
+[1401653767.903705] node 8 : receive pong from node 7
+[1401653767.903888] node 9 : receive pong from node 8
+[1401653767.904393] node 0 : receive pong from node 9
+[1401653768.902080] node 1 : receive pong from node 0
+[1401653768.902495] node 2 : receive pong from node 1
+[1401653768.903448] node 5 : receive ping from node 4
+[1401653768.903562] node 6 : receive ping from node 5
+[1401653768.903651] node 7 : receive ping from node 6
+[1401653768.905341] node 9 : receive ping from node 8
+[1401653768.905274] node 8 : receive ping from node 7
+[1401653768.905395] node 0 : receive ping from node 9
+[1401653769.902233] node 1 : receive ping from node 0
+[1401653769.902293] node 2 : receive ping from node 1
+[1401653769.902373] node 3 : receive ping from node 2
+[1401653769.902554] node 4 : receive ping from node 3
+[1401653769.903639] node 5 : receive ping from node 4
+[1401653769.903662] PONG lost ! - regenerate it !
+[1401653769.903821] node 7 : receive pong from node 6
+[1401653769.903776] node 6 : receive pong from node 5
+[1401653769.905490] node 9 : receive pong from node 8
+[1401653769.905459] node 8 : receive pong from node 7
+[1401653769.905630] node 0 : receive pong from node 9

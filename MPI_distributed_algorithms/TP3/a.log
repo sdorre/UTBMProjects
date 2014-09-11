@@ -1,0 +1,50 @@
+[1401651670.844754] master - send Ping
+[1401651670.844812] node 1 : receive ping from node 0
+[1401651670.845407] node 2 : receive ping from node 1
+[1401651670.845710] master - send Pong
+[1401651670.846017] node 3 : receive ping from node 2
+[1401651670.846437] node 4 : receive ping from node 3
+[1401651670.846883] node 5 : receive ping from node 4
+[1401651670.847362] node 6 : receive ping from node 5
+[1401651670.847742] node 7 : receive ping from node 6
+[1401651670.847973] node 8 : receive ping from node 7
+[1401651670.850401] node 9 : receive ping from node 8
+[1401651670.850693] node 0 : receive ping from node 9
+[1401651671.845519] node 1 : receive pong from node 0
+[1401651671.846111] node 2 : receive pong from node 1
+[1401651671.846494] node 3 : receive pong from node 2
+[1401651671.846993] node 4 : receive pong from node 3
+[1401651671.847377] node 5 : receive pong from node 4
+[1401651671.847847] node 6 : receive pong from node 5
+[1401651672.845679] node 1 : receive ping from node 0
+[1401651672.846257] node 2 : receive ping from node 1
+[1401651672.846625] node 3 : receive ping from node 2
+[1401651672.847120] node 4 : receive ping from node 3
+[1401651672.847498] node 5 : receive ping from node 4
+[1401651672.847583] node 6 : receive ping from node 5
+PONG lost ! - regenerate it !
+[1401651672.847725] node 7 : receive pong from node 6
+[1401651672.847890] node 8 : receive pong from node 7
+[1401651672.848088] node 9 : receive pong from node 8
+[1401651672.848265] node 0 : receive pong from node 9
+[1401651673.845890] node 1 : receive pong from node 0
+[1401651673.846414] node 2 : receive pong from node 1
+[1401651673.846781] node 3 : receive pong from node 2
+[1401651673.847275] node 4 : receive pong from node 3
+[1401651673.847634] node 5 : receive pong from node 4
+[1401651673.847869] node 6 : receive pong from node 5
+[1401651673.847935] node 7 : receive ping from node 6
+[1401651673.848236] node 8 : receive ping from node 7
+[1401651673.848403] node 9 : receive ping from node 8
+[1401651673.848745] node 0 : receive ping from node 9
+[1401651674.846107] node 1 : receive ping from node 0
+[1401651674.846819] node 2 : receive ping from node 1
+[1401651674.846942] node 3 : receive ping from node 2
+[1401651674.847445] node 4 : receive ping from node 3
+[1401651674.848262] node 7 : receive pong from node 6
+[1401651674.847819] node 5 : receive ping from node 4
+[1401651674.848061] node 6 : receive ping from node 5
+[1401651674.848384] node 8 : receive pong from node 7
+[1401651674.848563] node 9 : receive pong from node 8
+[1401651674.848901] node 0 : receive pong from node 9
+10 total processes killed (some possibly by mpirun during cleanup)

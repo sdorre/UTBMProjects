@@ -1,0 +1,38 @@
+node 3 : start ! my neighbors : 2 4 5 
+node 5 : start ! my neighbors : 3 
+node 1 : start ! my neighbors : 0 2 4 
+node 4 : start ! my neighbors : 1 2 3 
+node 2 : start ! my neighbors : 0 1 4 3 
+node 0 : start ! my neighbors : 1 2 
+******************start algorithm***********************
+Master 0 : send tag : forward, to node 1
+Master 0 : send tag : forward, to node 2
+node 1 receive message tag : forward from node 0
+node 1 : send tag : forward, to node 2
+node 1 : send tag : forward, to node 4
+node 4 receive message tag : forward from node 1
+node 4 : send tag : forward, to node 2
+node 4 : send tag : forward, to node 3
+node 3 receive message tag : forward from node 4
+node 3 : send tag : forward, to node 2
+node 3 : send tag : forward, to node 5
+node 5 receive message tag : forward from node 3
+node 5 : send tag : forward, to node 3 (my father)
+node 3 receive message tag : return from node 5
+node 2 receive message tag : forward from node 1
+node 2 : send tag : forward, to node 0
+node 2 : send tag : forward, to node 4
+node 2 : send tag : forward, to node 3
+node 2 receive message tag : forward from node 4
+node 4 receive message tag : forward from node 2
+node 3 receive message tag : forward from node 2
+node 3 : send tag : forward, to node 4 (my father)
+node 0 receive message tag : forward from node 2
+node 2 receive message tag : forward from node 3
+node 2 receive message tag : forward from node 0
+node 2 : send tag : forward, to node 1 (my father)
+node 4 receive message tag : return from node 3
+node 1 receive message tag : return from node 2
+node 1 receive message tag : return from node 4
+node 0 receive message tag : return from node 1
+Master : End of programm !

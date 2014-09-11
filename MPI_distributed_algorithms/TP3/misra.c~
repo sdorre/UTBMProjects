@@ -1,0 +1,124 @@
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <mpi.h>
+#include <unistd.h>
+
+
+int _rank, _numprocs, _ret;
+
+
+MPI_Comm graph_comm;
+
+MPI_Status status;
+
+/* number of nodes */
+int graph_node_count = 10;
+
+/* index definition */
+int graph_index[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+/* edges definition */
+int graph_edges[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+
+int graph_reorder = 1; /* allows processes reordered for efficiency */
+
+
+int create_graph() {
+
+    if (_numprocs < graph_node_count)
+        return 1;
+
+    MPI_Graph_create(MPI_COMM_WORLD, graph_node_count, graph_index, graph_edges, graph_reorder, &graph_comm); 
+
+    return 0;
+}
+
+
+
+
+
+int main(int argc, char *argv[]) {
+
+    MPI_Init(&argc, &argv);
+    MPI_Comm_size(MPI_COMM_WORLD, &_numprocs);
+    MPI_Comm_rank(MPI_COMM_WORLD, &_rank);
+
+    if(create_graph() != 0) {
+        printf("This program needs at least 4 nodes.\n");
+        return 1;
+    }
+	
+	int running = 1;
+	
+	//i iterator, neighbors - tabs of my neighbors
+	int i, rank, neighbor_count, *neighbors;
+    
+    int participated = 0;
+    int father;
+    
+    int ping = 301;
+    int pong = 302;
+    
+    int nbPing=1;
+    int nbPong=-1;
+    
+    int tmp=0;
+    int last_m=0;
+    
+    MPI_Comm_rank(graph_comm, &rank);       
+    
+    MPI_Graph_neighbors_count(graph_comm, rank, &neighbor_count);
+    
+    neighbors = (int*) malloc (neighbor_count * sizeof(int));
+    MPI_Graph_neighbors(graph_comm, rank, neighbor_count, neighbors);
+
+
+    
+	if(_rank == 0){
+			MPI_Send(nbPing, 1, MPI_INT, neighbors[0], ping, graph_comm);
+			MPI_Send(nbPong, 1, MPI_INT, neighbors[0], pong, graph_comm);
+	}
+	
+	while(running){
+		MPI_Recv(&tmp, 1, MPI_INT, MPI_ANY_SOURCE, MPI_ANY_TAG, graph_comm, &status);
+
+		printf("node %d : receive %s from node %d\n", _rank, (status.MPI_TAG==ping)?"ping":"pong", status.MPI_SOURCE);
+	
+		switch(status.MPI_TAG){
+		case ping:
+			if(last_m==tmp){
+				printf("----- token %s lost ! we regenerate it.",(status.MPI_TAG==ping)?"ping":"pong" );	
+				nbPing+=1;
+				nbPong=-nbPing;
+			}else{
+				last_m=tmp;
+			}	
+			MPI_Send(nbPing, 1, MPI_INT, neighbors[0], ping, graph_comm);
+			break;
+		
+		case pong:
+			if(last_m==tmp){
+				printf("----- token %s lost ! we regenerate it.",(status.MPI_TAG==ping)?"ping":"pong" );	
+				nbPong-=1;
+				nbPing=-nbPong;
+			}else{
+				last_m=tmp;
+			}
+			MPI_Send(nbPong, 1, MPI_INT, neighbors[0], pong, graph_comm);
+			break;
+			
+		default:
+			printf("unkown tag");
+			break;	
+		}
+		
+		sleep(1);
+		
+	}
+
+
+    MPI_Finalize();
+}

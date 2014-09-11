@@ -1,0 +1,101 @@
+/*************************List to distribute all the values to compute ****************/
+typedef struct s_List List;
+struct s_List{
+	List *next;
+	void *data;
+};
+
+List* list_create(void *data){
+	List *list = malloc(sizeof(list));
+	if (list){
+		list->data = data;
+		list->next = NULL;
+	}
+	return list;
+}
+
+List * list_append(List *list, void *data){
+	List **plist = &list;
+	while (*plist){
+		plist = &(*plist)->next;
+	}
+	*plist = list_create(data);
+	if(*plist){
+		return list;
+	} else {
+		return NULL;
+	}
+}
+
+List* list_remove_first(List *list){
+	List *first = list;
+	list = list->next;
+	free(list);
+	return list;
+}
+
+int list_length(List *list){
+	int length = 0;
+	while(list){
+		length++;
+		list = list->next;
+	}
+	return length;
+}
+
+/*******************************************************************************/
+// Here is an enhanced version of the Hello world program that identifies the process that writes each line of output:
+
+#include <stdio.h>
+#include <mpi.h>
+
+main(int argc, char **argv)
+{
+	int ierr, num_procs, my_id;
+
+	ierr = MPI_Init(&argc, &argv);
+
+	/* find out MY process ID, and how many processes were started. */
+
+	ierr = MPI_Comm_rank(MPI_COMM_WORLD, &my_id);
+	ierr = MPI_Comm_size(MPI_COMM_WORLD, &num_procs);
+
+	printf("Hello world! I'm process %i out of %i processes\n", 
+	 my_id, num_procs);
+
+	ierr = MPI_Finalize();
+}
+/*
+When we run this program, each process identifies itself:
+
+$ mpicc hello2.c -o hello2
+
+$ mpirun -np 4 hello2
+Hello world! I'm process 0 out of 4 processes.
+Hello world! I'm process 2 out of 4 processes.
+Hello world! I'm process 1 out of 4 processes.
+Hello world! I'm process 3 out of 4 processes.
+*/
+
+/* the objective of this exercise is to give one number to calculate for each process 
+
+To do so, each time a process has done hist work, it gives the first element of the list of values
+and calculate the formula with this value. When it finishes, it send the result and performs the same
+ task with the next value. 
+ 
+ The maibn process need que receive each value calculated and sum all. 
+ 
+ When the list of values is empty, the calcul is finished. So, we need to display the final value.
+ 
+********************************************************************************/
+
+
+
+/****************************************************************************************
+
+Another solution is to distribute the array into different parts and give these parts to each process.
+
+See : 
+http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml
+
+*************************************************************/
