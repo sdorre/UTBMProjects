@@ -1,0 +1,5 @@
+
+CONVERSION letter <==> integer
+
+This little experience take a text file given in parameter, in which a list a of number is written. It processes each number and re-writes it in letter in a second file. 
+There is also a variant in which, we read a list of letter-written number and give the right number.
