@@ -1,0 +1,3 @@
+Project : the Black Box
+
+Ce projet consiste à mettre en œuvre un data logger. Le principe est de simuler 3 capteurs qui envoient une mesure (nombre entier entre 1 et 100) à une tâche dédiée qui enregistre la mesure dans un fichier. Cette mesure doit être estampillée avec la valeur d'une horloge qui doit être créée également.
